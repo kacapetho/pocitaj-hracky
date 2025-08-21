@@ -1,0 +1,39 @@
+/* src/styles.css */
+:root {
+  --primary: #1E88E5;
+  --ok: #43A047;
+  --err: #E53935;
+  --bg: #FFF8E1;
+  --accent: #FB8C00;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; background: var(--bg); font-family: system-ui, "Nunito Sans", Arial; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 16px; }
+
+h1 { margin: 12px 0 8px; }
+p { margin: 0 0 16px; }
+button { font-size: 20px; padding: 12px 18px; border-radius: 12px; border: none; cursor: pointer; }
+button.primary { background: var(--primary); color: #fff; }
+/* Nechceme výrazný „focus ring“ po kliknutí myšou, ale zachováme ho pre klávesnicu */
+button:focus { outline: none; }
+button:focus-visible {
+  outline: 2px dashed var(--primary);
+  outline-offset: 2px;
+}
+
+/* Voliteľne: zosúladiť okraj pri focus-visible, aby nepôsobil „silnejšie“ */
+.option:focus-visible {
+  border-color: var(--primary);
+}
+
+.bar { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.panel { margin-top: 16px; }
+
+.playground { min-height: 180px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; padding: 12px; border-radius: 16px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.playground.ok { outline: 4px solid var(--ok); }
+.playground.wrong { outline: 4px solid var(--err); }
+
+.toy { font-size: 48px; line-height: 1; }
+.options { display: flex; gap: 12px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+.option { min-width: 64px; min-height: 64px; font-weight: 700; background: #fff; border: 2px solid #333; }
+.option:hover { background: #f2f2f2; }
